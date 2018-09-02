@@ -28,7 +28,7 @@ public class Player : MonoBehaviour {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
-        Debug.Log("Horizontal axis: " + horizontal.ToString() + " Vertical axis: " + vertical.ToString());
+        //Debug.Log("Horizontal axis: " + horizontal.ToString() + " Vertical axis: " + vertical.ToString());
 
         float newX = Mathf.Clamp(transform.position.x + (moveSpeed * horizontal), clampPos[0], clampPos[1]);
         float newZ = Mathf.Clamp(transform.position.z + (moveSpeed * vertical), clampPos[2], clampPos[3]);
