@@ -28,8 +28,6 @@ public class Player : MonoBehaviour {
         vertical = Input.GetAxisRaw("Vertical");
 
         updateLocation();
-
-        updateScale();
     }
 
     private void updateLocation()
@@ -47,23 +45,5 @@ public class Player : MonoBehaviour {
         Vector3 newPos = new Vector3(newX, transform.position.y, newZ);
 
         playerRigidbody.position = newPos;
-    }
-
-    private void updateScale()
-    {
-        if (horizontal < 0)
-        {
-            facingRight = false;
-            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * -1,
-                                               transform.localScale.y,
-                                               transform.localScale.z);
-        }
-        else if (horizontal > 0)
-        {
-            facingRight = true;
-            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x),
-                                               transform.localScale.y,
-                                               transform.localScale.z);
-        }
     }
 }
